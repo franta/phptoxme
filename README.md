@@ -23,6 +23,7 @@ Support only new web api, no dns. This api is usable only in some clients. Now, 
 	}
 
 * test if everything is working correctly
+
 	$ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
 
 	{
