@@ -24,7 +24,7 @@ Support only new web api, no dns. This api is usable only in some clients. Now, 
 
 * test if everything is working correctly
 
-	```$ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
+	``$ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
 
 	{
 	     "version": "Tox V3 (local)",
@@ -38,7 +38,7 @@ Support only new web api, no dns. This api is usable only in some clients. Now, 
 	         "status": 1,
 	         "detail": "Good (signed by local authority)"
 	     }
-	}```
+	}``
 
 Note: save toxme.php as api/index.php usually not working, because there is 301 redirect from /api to /api/, and qtox currently not support it
 
