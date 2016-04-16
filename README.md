@@ -15,30 +15,36 @@ Support only new web api, no dns. This api is usable only in some clients. Now, 
 * enable rewrite rules
 
 ##### Apache
-	RewriteRule ^api /api/toxme.php
+```
+RewriteRule ^api /api/toxme.php
+```
 
 ##### Nginx
-	location /api {
-		rewrite ^/api$ /toxme.php;
-	}
+```
+location /api {
+	rewrite ^/api$ /toxme.php;
+}
+```
 
-* test if everything is working correctly
+### test if everything is working correctly
 
-	``$ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
+```
+$ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
 
-	{
-	     "version": "Tox V3 (local)",
-	     "source": 1,
-	     "tox_id": "76518406F6A9F2217E8DC487CC783C25CC16A15EB36FF32E335A235342C48A39",
-	     "c": 0,
-	     "url": "tox:echobot@example.net",
-	     "name": "echobot",
-	     "regdomain": "example.net",
-	     "verify": {
-	         "status": 1,
-	         "detail": "Good (signed by local authority)"
-	     }
-	}``
+{
+     "version": "Tox V3 (local)",
+     "source": 1,
+     "tox_id": "76518406F6A9F2217E8DC487CC783C25CC16A15EB36FF32E335A235342C48A39",
+     "c": 0,
+     "url": "tox:echobot@example.net",
+     "name": "echobot",
+     "regdomain": "example.net",
+     "verify": {
+         "status": 1,
+         "detail": "Good (signed by local authority)"
+     }
+}
+```
 
 Note: save toxme.php as api/index.php usually not working, because there is 301 redirect from /api to /api/, and qtox currently not support it
 
