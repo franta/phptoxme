@@ -14,15 +14,16 @@ Support only new web api, no dns. This api is usable only in some clients. Now, 
 * upload to web hosting
 * enable rewrite rules
 
-#### Apache
+##### Apache
 > RewriteRule ^api /api/toxme.php
 
-#### Nginx
+##### Nginx
 > location /api {
 >	rewrite ^/api$ /toxme.php;
 >}
 
 * test if everything is working correctly
+
 > $ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
 > {
 >     "version": "Tox V3 (local)",
