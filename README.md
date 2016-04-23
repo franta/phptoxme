@@ -22,7 +22,7 @@ RewriteRule ^api /api/toxme.php
 ##### Nginx
 ```
 location /api {
-	rewrite ^/api$ /toxme.php;
+	rewrite ^/api$ /api/toxme.php;
 }
 ```
 
@@ -34,7 +34,7 @@ $ curl --data '{"action": 3,"name": "echobot" }' https://example.net/api
 {
      "version": "Tox V3 (local)",
      "source": 1,
-     "tox_id": "76518406F6A9F2217E8DC487CC783C25CC16A15EB36FF32E335A235342C48A39",
+     "tox_id": "76518406F6A9F2217E8DC487CC783C25CC16A15EB36FF32E335A235342C48A39218F515C39A6",
      "c": 0,
      "url": "tox:echobot@example.net",
      "name": "echobot",
