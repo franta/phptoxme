@@ -8,13 +8,13 @@ $domain = $_SERVER['SERVER_NAME'];
 $json = file_get_contents('php://input');
 $obj = json_decode($json, true);
 if($obj) {
-	if($obj['action']=='3' && $obj['name']) {
+	if(isset($obj['action']) && $obj['action']=='3' && !empty($obj['name'])) {
 		$name=$obj['name'];
 		$at = strpos($name, '@');
-		if($at) {
+		if($at!==false) {
 			$name = substr($name, 0, $at);
 	 	}
-	 	if($users[$name]) {
+	 	if(isset($users[$name])) {
 			$ret = <<<EOD
 {
 	"version": "Tox V3 (local)",
